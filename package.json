@@ -19,7 +19,7 @@
     "feed": "5.1.0"
   },
   "devDependencies": {
-    "eslint": "9.26.0",
+    "eslint": "10.3.0",
     "serve": "14.2.4"
   },
   "license": "MIT",
