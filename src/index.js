@@ -87,10 +87,10 @@ async function processFeed(feedConfig) {
   // 3. Write output files
   const absOutputDir = path.join(ROOT, OUTPUT_BASE, outputDir);
 
-  // Derive the GitHub Pages base URL for feed self-links.
-  // Falls back to a relative path if GITHUB_PAGES_URL env var is not set.
-  const pagesBase = process.env.GITHUB_PAGES_URL
-    ? `${process.env.GITHUB_PAGES_URL.replace(/\/$/, "")}/${outputDir}`
+  // Derive the base URL for feed self-links.
+  // Falls back to a relative path if SITE_BASE_URL env var is not set.
+  const pagesBase = process.env.SITE_BASE_URL
+    ? `${process.env.SITE_BASE_URL.replace(/\/$/, "")}/${outputDir}`
     : `/${outputDir}`;
 
   const { rssPath, atomPath, jsonPath } = writeFeed({
@@ -117,8 +117,8 @@ async function main() {
 
   // Write the HTML index page listing all feeds
   const docsDir = path.join(ROOT, OUTPUT_BASE);
-  const pagesBase = process.env.GITHUB_PAGES_URL
-    ? process.env.GITHUB_PAGES_URL.replace(/\/$/, "")
+  const pagesBase = process.env.SITE_BASE_URL
+    ? process.env.SITE_BASE_URL.replace(/\/$/, "")
     : "";
 
   const { htmlPath } = writeHtml({

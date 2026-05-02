@@ -50,9 +50,9 @@ In your repo settings → Pages, set the source to **GitHub Actions**.
 
 In your repo settings → Secrets and variables → Actions → Variables, add:
 
-| Name               | Value                                  |
-|--------------------|----------------------------------------|
-| `GITHUB_PAGES_URL` | `https://yourname.github.io/your-repo` |
+| Name             | Value                                              |
+|------------------|-----------------------------------------------------|
+| `SITE_BASE_URL`  | `https://lukehackett.com/tldr-newsletter-feeds`    |
 
 This is used to generate correct self-referencing feed links.
 
@@ -62,7 +62,7 @@ This is used to generate correct self-referencing feed links.
 npm install
 
 # Build feeds (writes to docs/)
-GITHUB_PAGES_URL=https://yourname.github.io/your-repo npm run build
+SITE_BASE_URL=https://lukehackett.com/tldr-newsletter-feeds npm run build
 
 # Serve the docs/ directory at http://localhost:3000
 npm run serve

@@ -30,6 +30,6 @@ jobs:
 
       - name: Build (dry run)
         env:
-          # Provide a dummy Pages URL so feed self-links resolve without error
-          GITHUB_PAGES_URL: "http://localhost:3000"
+          # Provide a dummy base URL so feed self-links resolve without error
+          SITE_BASE_URL: "http://localhost:3000"
         run: npm run build
